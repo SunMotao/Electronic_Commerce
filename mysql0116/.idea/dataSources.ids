@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - pj1712_shopping@localhost" uuid="49ee2b6c-ad2b-4754-8846-92cb7ca3ceae">
+    <database-info product="MySQL" version="5.5.19" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="pj1712_shopping"/>
+      <table id="2" parent="1" name="address"/>
+      <table id="3" parent="1" name="admin"/>
+      <table id="4" parent="1" name="customer"/>
+      <table id="5" parent="1" name="customer_history"/>
+      <table id="6" parent="1" name="discuss"/>
+      <table id="7" parent="1" name="inner_stock"/>
+      <table id="8" parent="1" name="order_item"/>
+      <table id="9" parent="1" name="order_list"/>
+      <table id="10" parent="1" name="outer_stock"/>
+      <table id="11" parent="1" name="product"/>
+      <table id="12" parent="1" name="product_shelf"/>
+      <table id="13" parent="1" name="product_stock"/>
+      <table id="14" parent="1" name="shopcart"/>
+      <column id="15" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="16" parent="2" name="customer_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="17" parent="2" name="province">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="18" parent="2" name="city">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="19" parent="2" name="country">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="20" parent="2" name="road">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="21" parent="2" name="address_lable">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="22" parent="2" name="address_create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="23" parent="2" name="address_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <index id="24" parent="2" name="address_fk_customer">
+        <columns>customer_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="25" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="26" parent="2" name="address_fk_customer">
+        <columns>customer_id</columns>
+        <ref-key>~.customer.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="27" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="28" parent="3" name="admin_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="29" parent="3" name="admin_password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="30" parent="3" name="admin_is_normal">
+        <data-type>int(2)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="31" parent="3" name="admin_create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="32" parent="3" name="admin_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="33" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="34" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="35" parent="4" name="customer_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="36" parent="4" name="customer_password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="37" parent="4" name="customer_email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="38" parent="4" name="customer_phone">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="39" parent="4" name="customer_money">
+        <data-type>decimal(10,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="40" parent="4" name="customer_is_normal">
+        <data-type>int(2)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="41" parent="4" name="customer_login_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="42" parent="4" name="customer_create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="43" parent="4" name="customer_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="44" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="45" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="46" parent="5" name="customer_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="47" parent="5" name="customer_password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="48" parent="5" name="customer_email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="49" parent="5" name="customer_phone">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="50" parent="5" name="customer_money">
+        <data-type>decimal(10,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="51" parent="5" name="customer_is_normal">
+        <data-type>int(2)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="52" parent="5" name="customer_login_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="53" parent="5" name="customer_create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="54" parent="5" name="customer_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="55" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="56" parent="6" name="customer_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="57" parent="6" name="order_item_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="58" parent="6" name="product_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="59" parent="6" name="discuss_score">
+        <data-type>int(2)</data-type>
+        <default-expression>&apos;5&apos;</default-expression>
+      </column>
+      <column id="60" parent="6" name="discuss_is_deleted">
+        <data-type>int(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="61" parent="6" name="discuss_create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="62" parent="6" name="discuss_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="63" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="64" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="65" parent="7" name="product_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="66" parent="7" name="inner_stock_number">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="67" parent="7" name="inner_create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="68" parent="7" name="inner_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="69" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="70" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="71" parent="8" name="order_list_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="72" parent="8" name="product_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="73" parent="8" name="product_number">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="74" parent="8" name="item_create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="75" parent="8" name="item_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="76" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="77" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="78" parent="9" name="customer_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="79" parent="9" name="total_money">
+        <data-type>decimal(10)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="80" parent="9" name="address_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="81" parent="9" name="order_is_pay">
+        <data-type>int(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="82" parent="9" name="order_is_transport">
+        <data-type>int(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="83" parent="9" name="order_is_deleted">
+        <data-type>int(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="84" parent="9" name="order_create_timea">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="85" parent="9" name="order_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="86" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="87" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="88" parent="10" name="product_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="89" parent="10" name="outer_stock_number">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="90" parent="10" name="outer_create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="91" parent="10" name="outer_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="92" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="93" parent="11" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="94" parent="11" name="product_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="95" parent="11" name="product_price">
+        <data-type>decimal(10,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="96" parent="11" name="product_type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="97" parent="11" name="product_is_deleted">
+        <data-type>int(2)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="98" parent="11" name="product_create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="99" parent="11" name="product_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="100" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="101" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="102" parent="12" name="product_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="103" parent="12" name="product_shelf_state">
+        <mandatory>1</mandatory>
+        <data-type>int(2)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="104" parent="12" name="shelf_create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="105" parent="12" name="shelf_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="106" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="107" parent="13" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="108" parent="13" name="product_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="109" parent="13" name="stock_number">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="110" parent="13" name="stock_create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="111" parent="13" name="stock_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="112" parent="13" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="113" parent="14" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="114" parent="14" name="customer_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="115" parent="14" name="product_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="116" parent="14" name="product_number">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="117" parent="14" name="shopcart_create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="118" parent="14" name="shopcart_modified_time">
+        <data-type>datetime</data-type>
+      </column>
+      <key id="119" parent="14" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
